@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Chessboard Grid</title>
+  <style>
+    body {
+      font-family: monospace;
+      font-size: 18px;
+    }
+
+    label {
+      white-space: pre; 
+    }
+  </style>
+</head>
+<body>
+  <script>
+
+    function print(data) {
+      const lbl = document.createElement('label');
+      lbl.textContent = data; 
+      document.body.appendChild(lbl);
+    }
+
+    function newLine() {
+      document.body.appendChild(document.createElement('br'));
+    }
+
+    const board_size = 8; 
+
+    for (let row = 0; row < board_size; row++) {
+      for (let col = 0; col < board_size; col++) {
+
+        const char = ((row + col) % 2 === 0) ? ' * ' : ' # ';
+        print(char);
+      }
+      newLine();
+    }
+  </script>
+</body>
+</html>
+
